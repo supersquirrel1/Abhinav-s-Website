@@ -153,6 +153,7 @@ input, select, textarea {
 
 	body {
 		background-color: #ffffff;
+		/*Default text color*/
 		color: #000000;
 	}
 
@@ -190,6 +191,11 @@ input, select, textarea {
 		p.major {
 			font-size: 1.25rem;
 		}
+
+	otherp {
+		margin: 0 0 2rem 0;
+		color: #64abb4;
+	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
@@ -320,6 +326,7 @@ input, select, textarea {
 	}
 
 	a {
+		/*default color*/
 		color: #000000;
 	}
 
@@ -4888,7 +4895,8 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
-			width: 35%;
+			/*Abhinav changed width so it's even*/
+			width: 60%;
 			min-width: 25rem;
 			border-radius: 0;
 		}
@@ -5699,6 +5707,44 @@ input, select, textarea {
 				border-radius: 0;
 			}
 
+		/*Abhinav added this*/
+		.spotlight.style5 .preview {
+			-moz-flex-grow: 0;
+			-webkit-flex-grow: 0;
+			-ms-flex-grow: 0;
+			flex-grow: 0;
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 0;
+		}
+	
+			.spotlight.style5 .preview img {
+				-moz-object-fit: cover;
+				-webkit-object-fit: cover;
+				-ms-object-fit: cover;
+				object-fit: cover;
+				-moz-object-position: center;
+				-webkit-object-position: center;
+				-ms-object-position: center;
+				object-position: center;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+
+				opacity: 0;
+			}
+
 		@media screen and (max-width: 1680px) {
 
 			.spotlight.style5 {
@@ -5852,6 +5898,22 @@ input, select, textarea {
 	.spotlight.style3.invert.android .image:after {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='32px' viewBox='0 0 64 32' zoomAndPan='disable'%3E%3Cstyle%3Erect %7Bfill: transparent%3B stroke: white%3B stroke-width: 1px%3B %7D%3C/style%3E%3Crect rx='4' ry='4' x='6' y='4' width='52' height='24' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
 	}
+
+	/*Abhinav added this effect*/
+	/*.spotlight.style5 .image:hover img{
+		opacity: 0.5;
+	}*/
+	.spotlight.style5:hover .preview{
+		opacity: 0.8;
+	}
+	.spotlight.style5:hover .image{
+		opacity: 0;
+	}
+	.spotlight.style5:hover .content{
+		background-color: rgba(0, 0, 0, 0.5);
+		/*opacity: 0.5;*/
+	}
+
 
 /* Gallery (transitions) */
 
@@ -6878,6 +6940,7 @@ input, select, textarea {
 				border-radius: 0;
 				opacity: 1;
 				object-position: center;
+				/*abhinav added this. It should center images*/
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -6897,6 +6960,7 @@ input, select, textarea {
 				height: 100%;
 				display: none;
 				object-position: center;
+				/*abhinav added this. It should center images*/
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -8625,6 +8689,14 @@ input, select, textarea {
 
 		#wrapper > .black {
 			background-color: #000000;
+		}
+
+		#wrapper > .mainColor {
+			background-color: #d4d3bb;
+		}
+
+		#wrapper > .white {
+			background-color:#ffffff;
 		}
 
 		#wrapper.divided > * {
