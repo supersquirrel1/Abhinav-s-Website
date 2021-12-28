@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <!--
 	Theme - Story by HTML5 UP
-	Website designed by Abhinav Ganesh, December 2021.
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -13,13 +12,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
 				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right color7">
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right mainColor">
 						<div class="content">
 							<h1>Hi,</h1>
 							<p class="major">I'm <a href="https://www.linkedin.com/in/abhinav-ganesh/">Abhinav Ganesh</a>, a freshman studying Computer Science at the <a href="https://www.utexas.edu">University of Texas at Austin</a>.
@@ -57,7 +57,8 @@
 								</div>
 							</article>
 							<article>
-								<a href="#section_2" class="video_trigger">
+								<a href="#first" class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
 									<img src="images/gallery/thumbs/PeppaMitai thumb.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
 									<img src="images/gallery/fulls/PeppaMitai Small.gif" class = "hover_image" alt="Preview could not be displayed" />
 								</a>
@@ -198,125 +199,102 @@
 						</div>
 					</section>
 
-				<!-- Two -->
-				<a id="section_2">
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
-						<div class="content">
-							<h2>Research</h2>
-							<p>I help the Hutter Research Lab by providing data visualiations to help analyze information from a gas cell.</p>
+				<!-- StudySmart spotlight -->
+					<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="first">
+						<div class="content" >
+							<h2 style="color: white;">StudySmart</h2>
+							<otherp>webscraping, optical character recognition, natural language processing</otherp>
+							<br></br>
+							<p style="color: white;">Application that utilizes NLP and ML to categorize
+								questions from previously released AP Exams into the units defined by the AP Course Curriculum to help
+								students focus on targeting specific unit areas to improve their scores.</p>
 							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
+								<li><a href="pages/StudySmart/About.html" class="button primary">Learn More</a></li>
 							</ul>
 						</div>
-						<div class="image">
+						<!--div class="image">
 							<img src="images/spotlight01.jpg" alt="" />
-						</div>
+						</div-->
+						<img src="images/gallery/thumbs/StudySmart thumb.png" class="image" alt="" />
 					</section>
-				</a>
 
-				<!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Texas Convergent</h2>
-							<p>As an Incubator Engineer on Texas Convergent, I helped design and create a demonstratable product for
-								<a href="https://news.utexas.edu/2021/12/16/ut-startup-hopes-to-remove-language-barriers-with-peer-reviewed-medical-translation/">Root Medical Translation</a>
-								.
+				<!-- 3D Animation Spotlight -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="first">
+						<div class="content" >
+							<h2 style="color: white;">3D Animation</h2>
+							<otherp>modeling, rigging, music editing</otherp>
+							<br></br>
+							<p style="color: white;">I like to learn 3D animation using blender and movie-creating software to create animations to entertain myself and others.</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button primary" onclick="myAlert()">Learn More</a></li>
+							</ul>
+						</div>
+						<!--div class="image">
+							<img src="images/spotlight01.jpg" alt="" />
+						</div-->
+						<img src="images/gallery/thumbs/PeppaMitai thumb.png" class="image" alt="" />
+					</section>
+
+				<!-- VFX spotlight -->
+					<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="first">
+						<div class="content" >
+							<h2 style="color: white;">VFX</h2>
+							<otherp>scripting, rotoscoping, masking</otherp>
+							<br></br>
+							<p style="color: white;">I created Python scripts in Blender to help make creating VFX more accessible because of the steep learning curve. 
+								For example, I've created scripts that automatically create a lightsaber effect and an energy ball effect.</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button primary" onclick="myAlert()">Learn More</a></li>
+							</ul>
+						</div>
+						<!--div class="image">
+							<img src="images/spotlight01.jpg" alt="" />
+						</div-->
+						<img src="images/gallery/thumbs/VFX thumb.png" class="image" alt="" />
+					</section>
+
+				<!-- 2D Animation Spotlight -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="first">
+						<div class="content" >
+							<h2 style="color: white;">2D Animation</h2>
+							<otherp>character design, storyboarding, sound design, drawing</otherp>
+							<br></br>
+							<p style="color: white;">
+								Inspired by the entertainment of cartoons and anime, I decided to learn 2D animation.
+								It has proven to be a pretty useful skill to have when it comes to projects, and is a lot more intuitive than other digital media.
 							</p>
 							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
+								<li><a href="#" class="button primary" onclick="myAlert()">Learn More</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
+							<img src="images/gallery/thumbs/01.jpg" alt="" />
+							<img src="images/gallery/thumbs/PvS preview.png" alt="" />
 						</div>
 					</section>
 
-				<!-- Four -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Pharetra etiam nulla</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight03.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Six -->
-					<section class="wrapper style1 align-center">
-						<div class="inner">
-							<h2>Ipsum sed consequat</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
-							<div class="items style1 medium onscroll-fade-in">
-								<section>
-									<span class="icon style2 major fa-gem"></span>
-									<h3>Lorem</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-save"></span>
-									<h3>Ipsum</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-chart-bar"></span>
-									<h3>Dolor</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-wifi"></span>
-									<h3>Amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cog"></span>
-									<h3>Magna</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon style2 major fa-paper-plane"></span>
-									<h3>Tempus</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>Aliquam</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-sync-alt"></span>
-									<h3>Elit</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-hashtag"></span>
-									<h3>Morbi</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-bolt"></span>
-									<h3>Turpis</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-envelope"></span>
-									<h3>Ultrices</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-leaf"></span>
-									<h3>Risus</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-							</div>
-						</div>
-					</section>
+				<!-- Games spotlight -->
+				<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="first">
+					<div class="content" >
+						<h2 style="color: white;">Games</h2>
+						<otherp>collision detection, animation, multiplayer</otherp>
+						<br></br>
+						<p style="color: white;">
+							Ever since my humble beginnings learning programming on Scratch, I liked the idea of coding something that I could use to entertain myself.
+							From multiplayer sidescroller games with powerups to AI connect four to bomberman, I have created a wide variety of games.
+						</p>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary" onclick="myAlert()">Learn More</a></li>
+						</ul>
+					</div>
+					<!--div class="image">
+						<img src="images/spotlight01.jpg" alt="" />
+					</div-->
+					<img src="images/gallery/thumbs/Electro Man thumb.png" class="image" alt="" />
+				</section>
 
 				<!-- Seven -->
-					<section class="wrapper style1 align-center">
+					<section class="wrapper style1 align-center invert">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
 							<form method="post" action="#">
@@ -335,7 +313,8 @@
 									</div>
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+									<!--li><input type="submit" name="submit" id="submit" value="Send Message"></li-->
+									<li><input type="button" name="submit" id="submit" value="Send Message" onclick="myAlert()"></li>
 								</ul>
 							</form>
 
@@ -343,7 +322,7 @@
 					</section>
 
 				<!-- Footer -->
-					<footer class="wrapper style1 align-center">
+					<footer class="wrapper style1 align-center mainColor">
 						<div class="inner">
 							<ul class="icons">
 								<!--
