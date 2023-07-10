@@ -1,0 +1,274 @@
+<!--
+    Created by Abhinav Ganesh
+    Special thanks to https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Track_the_score_and_win
+    for helping explain how game works
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omniscient</title>
+
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d"); // ctx stands for context
+        
+        //var x = canvas.width/2;
+        //var y = canvas.height-30;
+        const ballSpeed = -2;
+        var ballRadius = 10;
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+        var paddleX = (canvas.width-paddleWidth) / 2;
+        var paddleY = canvas.height-paddleHeight;
+        var balls = [];
+        var obstacles = [];
+        var obstacleLimit = 4;
+        var obstacleHeight = 15;
+
+        var spacePressed = false;
+        var score = 0;
+        var playing = true;
+
+        function drawScore() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Score: "+score, 8, 20);
+        }
+
+        function Obstacle(startX, startY, width, speed) {
+            // horizontally moving objects
+            // spawn at random point in upper half of screen
+            // random width, random speed. Right to left movement
+            // total # of objects is fixed
+            // of 2 obstacles collide w each other then the slower of the 2 speeds takes over
+            this.xLoc = startX;
+            this.yLoc = startY;
+            this.dx = speed;
+            this.dy = 0;
+            this.width = width;
+        }
+
+        function moveObstacle(obs) {
+            // handle collision w balls and/or other obstacles elsewhere
+            // if is completely off of left of screen, disappear
+            if(obs.xLoc + obs.width < 0) {
+                // remove the obstacle
+                // find its index and remove it
+                var index = obstacles.indexOf(obs);
+                if(index != -1) {
+                    obstacles.splice(index, 1);
+                }
+            }
+            /*if(obs.yLoc + obs.dy > canvas.height-obs.height || obs.yLoc - obs.dy < obs.width) {
+                // bounce
+                obs.dy = -obs.dy;
+            }*/
+            obs.xLoc += obs.dx;
+            obs.yLoc += obs.dy;
+        }
+
+        function obstacleCollisions() {
+            for(var i = 0; i < obstacles.length; i++) {
+                for(var j = i+1; j < obstacles.length; j++) {
+                    var ob1 = obstacles[i];
+                    var ob2 = obstacles[j];
+
+                    // check if they've collided
+                    if(((ob1.xLoc < ob2.xLoc && ob1.xLoc + ob1.width > ob2.xLoc)
+                            || (ob2.xLoc < ob1.xLoc && ob2.xLoc + ob2.width > ob1.xLoc))
+                            && ((ob1.yLoc < ob2.yLoc && ob1.yLoc + obstacleHeight > ob2.yLoc)
+                                || ob2.yLoc < ob1.yLoc && ob2.yLoc + obstacleHeight > ob1.yLoc)) {
+                                // console.log("collision detected")
+                                // both speeds become the slower object
+                                if(ob2.dx < ob1.dx) {
+                                    ob1.dx = ob2.dx;
+                                }
+                                else {
+                                    // ob1 is lower speed
+                                    ob2.dx = ob1.dx;
+                                }
+                            }
+                }
+            }
+        }
+
+        function ballsSafe(ballsList, obsList) {
+            // takes in a list of balls and obstacles and returns if the balls are safe
+            for (var i = 0; i < ballsList.length; i++) {
+                for (var j = 0; j < obsList.length; j++) {
+                    var tempBall = ballsList[i];
+                    var tempOb = obsList[j];
+                    // do they collide?
+                    if ((tempBall.yLoc - ballRadius < tempOb.yLoc + obstacleHeight) && (tempBall.yLoc + ballRadius > tempOb.yLoc)
+                            && ((tempBall.xLoc > tempOb.xLoc && tempBall.xLoc < tempOb.xLoc + tempOb.width)
+                                    || (tempBall.xLoc < tempOb.xLoc && tempBall.xLoc + ballRadius > tempOb.xLoc)
+                                    || (tempBall.xLoc > tempOb.xLoc && tempBall.xLoc - ballRadius < tempOb.xLoc + tempOb.width))) {
+                        // yes they collide - balls not safe
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function Ball(startX, startY, speed) {
+            this.xLoc = startX;
+            this.yLoc = startY;
+            this.dx = 0;
+            this.dy = speed;
+        }
+
+        function moveBall(b) {
+            // takes in a Ball object called b
+            // bounce off the walls (only in x direction)
+            if(b.xLoc + b.dx > canvas.width-ballRadius || b.xLoc < ballRadius) {
+                b.dx = -b.dx;
+            }
+            // if exits canvas then we don't want the ball anymore
+            if(b.yLoc + b.dy > canvas.height-ballRadius || b.yLoc - b.dy < ballRadius) {
+                // ball should disappear & score should increase
+                score++;
+                // theoretically the first ball added should be the one to disappear
+                balls.shift();
+            }
+            b.xLoc += b.dx;
+            b.yLoc += b.dy;
+        }
+
+        function reset() {
+            balls = [];
+            obstacles = [];
+            score = 0;
+        }
+
+        function drawObstacle(ob) {
+            // takes in an obstacle object called ob
+            ctx.beginPath();
+            ctx.rect(ob.xLoc, ob.yLoc, ob.width, obstacleHeight);
+            ctx.fillStyle = "rgb(226, 43, 43)";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawBall(b) {
+            // takes in a Ball object called b
+            ctx.beginPath();
+            ctx.arc(b.xLoc, b.yLoc, ballRadius, 0, Math.PI*2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function gameOver() {
+            ctx.beginPath();
+            ctx.rect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+            ctx.font = "20px Helvetica";
+            ctx.fillStyle = "rgb(226, 43, 43)";
+            //ctx.fillText("Score: "+score, 8, 20);
+            ctx.fillText("Game Over!", canvas.width/2 - 80, canvas.height/2 - 45);
+            ctx.fillText("Score: "+score, canvas.width/2 - 80, canvas.height/2 - 20);
+            ctx.fillText("Press 'Space' to play again", canvas.width/2 - 100, canvas.height/2 - 0);
+        }
+
+        var reqAnimationReference;
+
+        function draw() {
+            //is ball colliding w obstacles?
+            if(!ballsSafe(balls, obstacles)) {
+                // console.log("ball hit");
+                // lost game
+                gameOver();
+                playing = false;
+                //console.log("over")
+                //alert("GAME OVER");
+                reset();
+                //document.location.reload();
+                cancelAnimationFrame(reqAnimationReference);
+                return;
+            }
+            // clear canvas content before redrawing
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // move and redraw balls
+            for(b of balls) {
+                moveBall(b);
+                drawBall(b);
+            }
+            // move and redraw obstacles
+            for (ob of obstacles) {
+                moveObstacle(ob);
+                drawObstacle(ob);
+            }
+            // are obstacles colliding?
+            obstacleCollisions();
+            // add new obstacle if necessary
+            if (obstacles.length < obstacleLimit) {
+                // created somewhere in random location in upper half of screen
+                var randomY = Math.random()*canvas.height*5/6;
+                // random speed, random width
+                obstacles.push(new Obstacle(canvas.width, randomY, Math.random()*200 + 50, -1*(Math.random()+1)))
+            }
+            // draw launcher
+            drawPaddle();
+            // draw score
+            drawScore();
+
+            // browser decides framerate and renders shapes only when needed
+            reqAnimationReference = requestAnimationFrame(draw);
+            /*if (!playing) {
+                console.log("No longer playing")
+                cancelAnimationFrame(reqAnimationReference);
+            }*/
+        }
+
+        // constantly update the canvas drawing
+        draw();
+
+        // space up or down?
+        function keyDownHandler(e) {
+            if(e.key == "Spacebar" || e.key == " " || e.keyCode == 32) {
+                rightPressed = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if(e.key == "Spacebar" || e.key == " " || e.keyCode == 32) {
+                rightPressed = false;
+            }
+            if (playing) {
+                // add another ball
+                // want it to spawn in middle of paddle
+                var midPaddleX = ((paddleX + paddleWidth) + paddleX)/2;
+                balls.push(new Ball(midPaddleX, paddleY, ballSpeed));
+            }
+            else {
+                playing = true;
+                draw();
+            }     
+        }
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+    </script>
+</body>
+</html>
