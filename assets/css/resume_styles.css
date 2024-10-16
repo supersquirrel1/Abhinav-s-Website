@@ -1,0 +1,34 @@
+.experience-container {
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.experience-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.italicized {
+    font-style: italic;
+}
+
+.date-range {
+    text-align: left;
+    /* Add a class or ID to isolate styles */
+    margin-right: 20px; /* Adjust spacing if needed */
+}
+
+.details-list {
+    list-style-type: disc;
+    padding: 0;
+    text-align: left;
+    /* Add a class or ID to target specifically */
+}
+.details-list {
+    list-style-type: disc; /* Or use another list style, e.g., circle, square */
+    padding-left: 20px;
+}
