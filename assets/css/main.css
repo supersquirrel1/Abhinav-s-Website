@@ -3583,7 +3583,7 @@ input, select, textarea {
 		}
 
 		.banner.style1.fullscreen {
-			min-height: 100vh;
+			min-height: 50vh;
 		}
 
 			@media screen and (orientation: portrait) {
@@ -7104,6 +7104,376 @@ input, select, textarea {
 			}
 
 		}
+
+/* Gallery (style3) (style1 but with the hover modifications)*/
+
+.gallery.style3 {
+	background-color: #000000;
+	color: #ffffff;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	background-color: transparent;
+}
+
+	.gallery.style3 input, .gallery.style3 select, .gallery.style3 textarea {
+		color: #ffffff;
+	}
+
+	.gallery.style3 a {
+		color: #ffffff;
+	}
+
+		.gallery.style3 a:hover {
+			color: #47D3E5;
+		}
+
+	.gallery.style3 strong, .gallery.style3 b {
+		color: #ffffff;
+	}
+
+	.gallery.style3 h1, .gallery.style3 h2, .gallery.style3 h3, .gallery.style3 h4, .gallery.style3 h5, .gallery.style3 h6 {
+		color: #ffffff;
+	}
+
+	.gallery.style3 blockquote {
+		border-left-color: white;
+	}
+
+	.gallery.style3 code {
+		background: rgba(255, 255, 255, 0.125);
+		border-color: white;
+	}
+
+	.gallery.style3 hr {
+		border-bottom-color: white;
+	}
+
+	.gallery.style3 input[type="submit"],
+	.gallery.style3 input[type="reset"],
+	.gallery.style3 input[type="button"],
+	.gallery.style3 button,
+	.gallery.style3 .button {
+		background-color: transparent;
+		box-shadow: inset 0 0 0 1px white;
+		color: #ffffff !important;
+	}
+
+		.gallery.style3 input[type="submit"]:hover,
+		.gallery.style3 input[type="reset"]:hover,
+		.gallery.style3 input[type="button"]:hover,
+		.gallery.style3 button:hover,
+		.gallery.style3 .button:hover {
+			box-shadow: inset 0 0 0 1px #47D3E5;
+			color: #47D3E5 !important;
+		}
+
+		.gallery.style3 input[type="submit"]:active,
+		.gallery.style3 input[type="reset"]:active,
+		.gallery.style3 input[type="button"]:active,
+		.gallery.style3 button:active,
+		.gallery.style3 .button:active {
+			background-color: rgba(71, 211, 229, 0.2);
+			box-shadow: inset 0 0 0 1px #47D3E5;
+			color: #47D3E5 !important;
+		}
+
+		.gallery.style3 input[type="submit"].primary,
+		.gallery.style3 input[type="reset"].primary,
+		.gallery.style3 input[type="button"].primary,
+		.gallery.style3 button.primary,
+		.gallery.style3 .button.primary {
+			background-color: #ffffff;
+			box-shadow: none;
+			color: #000000 !important;
+		}
+
+			.gallery.style3 input[type="submit"].primary:hover,
+			.gallery.style3 input[type="reset"].primary:hover,
+			.gallery.style3 input[type="button"].primary:hover,
+			.gallery.style3 button.primary:hover,
+			.gallery.style3 .button.primary:hover {
+				background-color: #47D3E5;
+			}
+
+			.gallery.style3 input[type="submit"].primary:active,
+			.gallery.style3 input[type="reset"].primary:active,
+			.gallery.style3 input[type="button"].primary:active,
+			.gallery.style3 button.primary:active,
+			.gallery.style3 .button.primary:active {
+				background-color: #1ebdd1;
+			}
+
+	.gallery.style3 > .forward, .gallery.style3 > .backward {
+		display: none;
+	}
+
+	.gallery.style3 > .inner {
+		-moz-align-items: inherit;
+		-webkit-align-items: inherit;
+		-ms-align-items: inherit;
+		align-items: inherit;
+		display: inherit;
+		-moz-flex-wrap: inherit;
+		-webkit-flex-wrap: inherit;
+		-ms-flex-wrap: inherit;
+		flex-wrap: inherit;
+		-moz-justify-content: inherit;
+		-webkit-justify-content: inherit;
+		-ms-justify-content: inherit;
+		justify-content: inherit;
+	}
+
+	.gallery.style3 article {
+		overflow: hidden;
+		position: relative;
+		width: 25%;
+	}
+
+		.gallery.style3 article .thumbnail_image {
+				display: block;
+				height: 100%;
+				border-radius: 0;
+				opacity: 1;
+				object-position: center;
+				/*abhinav added this. It should center images*/
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+					-ms-transform: translate(-50%, -50%);
+						transform: translate(-50%, -50%);
+			}
+
+				.gallery.style3 article .thumbnail_image img {
+					display: block;
+					width: 100%;
+					border-radius: 0;
+					opacity: 1;
+				}
+
+		.gallery.style3 article .hover_image {
+			height: 100%;
+			display: none;
+			object-position: center;
+			/*abhinav added this. It should center images*/
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+		}
+			.gallery.style3 article .hover_image img {
+				display: block;
+				width: 100%;
+				border-radius: 0;
+				opacity: 1;
+			}
+
+		.gallery.style3 article .caption {
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			pointer-events: none;
+			-moz-transition: opacity 0.2s ease-in-out;
+			-webkit-transition: opacity 0.2s ease-in-out;
+			-ms-transition: opacity 0.2s ease-in-out;
+			transition: opacity 0.2s ease-in-out;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			padding: 2rem;
+			z-index: 1;
+			font-size: 0.8rem;
+		}
+
+			.gallery.style3 article .caption a {
+				pointer-events: auto;
+			}
+
+			.gallery.style3 article .caption h2, .gallery.style1 article .caption h3, .gallery.style1 article .caption h4, .gallery.style1 article .caption h5, .gallery.style1 article .caption h6 {
+				font-size: 1.25rem;
+				margin-bottom: 0.25rem;
+			}
+
+			.gallery.style3 article .caption > * {
+				max-width: 100%;
+				margin-bottom: 1rem;
+			}
+
+			.gallery.style3 article .caption > :last-child {
+				margin-bottom: 0;
+			}
+
+		.gallery.style3 article:hover .caption {
+			opacity: 1;
+		}
+
+		/*Abhinav added the thumbnail/hover stuff*/
+		.gallery.style3 article:hover .thumbnail_image {
+			display: none;
+		}
+
+		.gallery.style3 article:hover .hover_image {
+			display: block;
+		}
+
+	@media screen and (max-width: 1280px) {
+
+		.gallery.style3 article {
+			width: 33.33333%;
+		}
+
+			.gallery.style3 article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.gallery.style3 article {
+			width: 50%;
+		}
+
+			.gallery.style3 article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.gallery.style3 article {
+			width: 100%;
+		}
+
+			.gallery.style3 article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	.gallery.style3.small article {
+		width: 20%;
+	}
+
+		.gallery.style3.small article .caption {
+			padding: 1rem;
+		}
+
+	@media screen and (max-width: 1280px) {
+
+		.gallery.style3.small article {
+			width: 25%;
+		}
+
+			.gallery.style3.small article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.gallery.style3.small article {
+			width: 33.33333%;
+		}
+
+			.gallery.style1.small article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.gallery.style3.small article {
+			width: 50%;
+		}
+
+			.gallery.style3.small article .caption {
+				padding: 1rem;
+			}
+
+	}
+
+	.gallery.style3.big article {
+		width: 33.33333%;
+	}
+
+		.gallery.style3.big article .caption {
+			padding: 3rem;
+		}
+
+	@media screen and (max-width: 1280px) {
+
+		.gallery.style3.big article {
+			width: 50%;
+		}
+
+			.gallery.style3.big article .caption {
+				padding: 2rem;
+			}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.gallery.style3.big article {
+			width: 50%;
+		}
+
+			.gallery.style3.big article .caption {
+				padding: 2rem;
+			}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.gallery.style3.big article {
+			width: 100%;
+		}
+
+			.gallery.style3.big article .caption {
+				padding: 1rem;
+			}
+
+	}
 
 /* Gallery (lightbox) */
 

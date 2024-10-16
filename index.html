@@ -23,8 +23,8 @@
 				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right mainColor">
 					<div class="content">
 						<h1>Hi,</h1>
-						<p class="major">I'm <a href="https://www.linkedin.com/in/abhinav-ganesh/">Abhinav Ganesh</a>, a senior studying Computer Science at the <a href="https://www.utexas.edu">University of Texas at Austin</a>.
-							Feel free to roam around my webite or just view my resume <a href="pages/Resume/Resume.html">here</a>. 
+						<p class="major">I'm <a href="https://www.linkedin.com/in/abhinav-ganesh/">Abhinav Ganesh</a>, a senior studying <a href="https://www.cs.utexas.edu/">Computer Science</a> and <a href="https://www.ma.utexas.edu/">Mathematics</a> at the <a href="https://www.utexas.edu">University of Texas at Austin</a>.
+							Feel free to roam around my webite and take a look at <a href="pages/Resume/Resume.html">my resume</a>. 
 							<br>
 							<br>
 							See my GitHub <a href="https://github.com/Abhi-Gan/">here</a>.
@@ -34,50 +34,197 @@
 						</ul>
 					</div>
 					<div class="image">
-						<img src="images/enchanted rock.jpg" alt="" />
+						<img src="images/gallery/thumbs/esri_hackathon_2024_small.jpg" alt="" />
 					</div>
 				</section>
 				
 				<!-- header for Projects-->
-				<section class="wrapper style1 align-center black invert divided">
+				<!-- <section class="wrapper style1 align-center black invert divided">
 					<div class="inner">
 						<h1>Projects</h1>
 						<p>
 							From Animation to Machine Learning, I enjoy learning all sorts of things.
 						</p>
 					</div>
-				</section>
+				</section> -->
 
 				<!-- Five -->
-				<section class="wrapper style1 align-center black invert divided" style="color: aliceblue;">
-					<h3>Featured Projects:</h3>
+				<section class="wrapper style1 align-center black invert divided" style="color: aliceblue;" id="projects">
+					<h1>Projects</h1>
 					<!-- Gallery -->
-						<div class="gallery style2 medium lightbox onscroll-fade-in" id="projects">
-							<article>
-								<a href="/pages/Machine_Learning.html#StudySmart" class="image">
-									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
-									<img src="images/gallery/thumbs/StudySmart thumb.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
-									<img src="images/gallery/fulls/StudySmart Preview.gif" class = "hover_image" alt="Preview could not be displayed" />
+						<div class="gallery style3 medium lightbox onscroll-fade-in">
+							<!-- <article>
+								<a href="/pages/Resume/Resume.html" class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/esri_hackathon_2024_small.jpg" class = "thumbnail_image" alt="Thumbnail could not be displayed">
+									<img src="images/gallery/thumbs/esri_hackathon_2024_small.jpg" class = "hover_image" alt="Preview could not be displayed" />
 								</a>
 								<div class="caption">
-									<h3>StudySmart</h3>
-									<p>I used NLP and ML to categorize questions from previously released AP Chemistry Exams to create much more usable study material.</p>
+									<h3>Resume</h3>
+									<p>Please look at my resume</p>
 									<ul class="actions fixed">
 										<li><span class="button small">Details</span></li>
 									</ul>
 								</div>
+							</article> -->
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/WordMap_thumb.png" class="thumbnail_image" alt="WordMap Demo" />
+									<img src="images/gallery/fulls/WordMap.gif" class="hover_image" alt="WordMap Demo" />
+								</div>
+								<div class="caption">
+									<h3>WordMap</h3>
+									<p>
+										Educational tool using NER and LLMs to visualize the relationships between historical events. Created during Esri Intern Hakathon 2024.
+									</p>
+									<ul class="actions fixed">
+										<li><a href="https://github.com/Abhi-Gan/LatitudeWithAttitude" class="button primary">Details</a></li>
+									</ul>
+								</div>
 							</article>
 							<article>
-								<a href="/pages/Animation/Animation.html#porktaro" class="image">
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/HMM_thumb.png" class="thumbnail_image" alt="MFCC extraction thumbnail" />
+									<img src="images/gallery/fulls/HMM_code.gif" class="hover_image" alt="Code for HMM-based word recognizer" />
+								</div>
+								<div class="caption">
+									<h3>Speech-To-Text using HMMs</h3>
+									<p>
+										isolated word recognizer utilizing Hidden Markov Models (HMMs) 
+										to predict spoken words based on audio input (.wav).
+									</p>
+									<ul class="actions fixed">
+										<li><span class="button primary disabled">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/CurbCut_thumb.png" class="thumbnail_image" alt="CurbCut Mockup" />
+									<img src="images/gallery/fulls/curbcut.gif" class="hover_image" alt="CurbCut Mockup" />
+								</div>
+								<div class="caption">
+									<h3>CurbCut</h3>
+									<p>
+										Accessibility-focused routing Android application built for Esri Intern Hakathon 2023.
+									</p>
+									<ul class="actions fixed">
+										<li><a href="https://devpost.com/software/temp-name-q1a2sm" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/LightYearsWeekDays_thumb.jpg" class="thumbnail_image" alt="Chime Tunnel" />
+									<img src="images/gallery/thumbs/LightYearsWeekDays_thumb.jpg" class="hover_image" alt="Chime Tunnel" />
+								</div>
+								<div class="caption">
+									<h3>Light Years, Week Days</h3>
+									<p>
+										Created interactive music installation outside of NUS' conservatory of music as part of class project during my study abroad in Singapore.
+									</p>
+									<ul class="actions fixed">
+										<li><a href="https://cfa.nus.edu.sg/naf2023/event/light-years-week-days/" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/travels/marinabaysands.jpg" class="thumbnail_image" alt="Marina Bay Sands, Singapore" />
+									<img src="images/gallery/travels/marinabaysands.jpg" class="hover_image" alt="Marina Bay Sands, Singapore" />
+								</div>
+								<div class="caption">
+									<h3>Travels</h3>
+									<p>
+										Travel experiences from my Study Abroad in Singapore, trips, and more!
+							I'm still working on creating this but you can take a look at some of these articles by my friends <a href="https://medium.com/@nafisazizi/creating-lifelong-memories-bonds-and-adventures-of-a-lifetime-at-nus-9487311ddf1c">Nafis Azizi</a>
+							and <a href="https://studyabroad.gwu.edu/day-life-national-university-singapore">Sophie Rice</a>
+									</p>
+									<ul class="actions fixed">
+										<li><span class="button primary disabled">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/AcneAnalysis_thumb.png" class="thumbnail_image" alt="Acne Analysis image" />
+									<img src="images/gallery/fulls/AcneAnalysis.gif" class="hover_image" alt="Acne Analysis Report" />
+								</div>
+								<div class="caption">
+									<h3>Acne Analysis</h3>
+									<p>
+										What triggers your acne? I recorded over 1 month of data regarding my acne along with data I believed to be correlated. 
+										I attempted to perform some simple statistical analyis to investigate the relationship.
+									</p>
+									<ul class="actions fixed">
+										<li><a href="https://github.com/Abhi-Gan/Acne_Analysis/blob/main/Final_Project.pdf" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/homer_odyssey_cover.jpg" class="thumbnail_image" alt="Red Clay Pottery with illustration from Homer's Odyssey" />
+									<img src="images/gallery/thumbs/homer_odyssey_cover.jpg" class="hover_image" alt="Red Clay Pottery with illustration from Homer's Odyssey" />
+								</div>
+								<div class="caption">
+									<h3>Sentiment Analysis of Homer's Odyssey</h3>
+									<p>
+										Sentiment Analysis to Compare Characters across Translations of Homer's Odyssey
+									</p>
+									<ul class="actions fixed">
+										<li><a href="/pages/Machine_Learning.html#Odyssey-Sentiment-Analysis" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" />
+									<img src="images/gallery/thumbs/leetcode_proof_thumb.png" class="thumbnail_image" alt="LeetCode BST proof" />
+									<img src="images/gallery/thumbs/leetcode_proof_thumb.png" class="hover_image" alt="LeetCode BST proof" />
+								</div>
+								<div class="caption">
+									<h3>LeetCode Proofs</h3>
+									<p>
+										As much as I hate to admit it LeetCode is a great way to challenge your brain.
+										I write proofs so that its easier to wrap my head around the intuition and correctness of solutions.
+									</p>
+									<ul class="actions fixed">
+										<li><a href="pages/LeetCode/LeetCode.html" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
+									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
+									<img src="images/gallery/thumbs/StudySmart thumb.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
+									<img src="images/gallery/fulls/StudySmart Preview.gif" class = "hover_image" alt="Preview could not be displayed" />
+								</div>
+								<div class="caption">
+									<h3>StudySmart</h3>
+									<p>I used NLP and ML to categorize questions from previously released AP Chemistry Exams to create much more usable study material.</p>
+									<ul class="actions fixed">
+										<li><a href="/pages/Machine_Learning.html#StudySmart" class="button primary">Details</a></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<div class="image">
 									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
 									<img src="images/gallery/thumbs/PvS preview.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
 									<img src="images/gallery/fulls/PvS preview.gif" class = "hover_image" alt="Preview could not be displayed" />
-								</a>
+								</div>
 								<div class="caption">
 									<h3>Porktaro's Bizarre Adventure</h3>
 									<p>My first major 2D Animation project inspired by a combination of anime and Peppa Pig.</p>
 									<ul class="actions fixed">
-										<li><span class="button small">Details</span></li>
+										<li><span class="button primary disabled">Details</span></li>
 									</ul>
 								</div>
 							</article>
@@ -96,30 +243,31 @@
 								</div>
 							</article-->
 							<article>
-								<a href="#Games" class="image">
+								<div class="image">
 									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
 									<img src="images/gallery/thumbs/Electro Man thumb.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
 									<img src="images/gallery/fulls/Electro Man preview.gif" class = "hover_image" alt="Preview could not be displayed" />
-								</a>
+								</div>
 								<div class="caption">
 									<h3>Electro Man</h3>
 									<p>Inspired by Gravity Guy, I made my own multiplayer sidescroller game in Java.</p>
 									<ul class="actions fixed">
-										<li><span class="button small">Details</span></li>
+										<li><a href="/pages/Games.html" class="button primary">Details</a></li>
 									</ul>
 								</div>
 							</article>
 							<article>
-								<a href="#VFX" class="image">
+								<div class="image">
 									<img src="images/gallery/thumbs/01.jpg" alt="" /> <!-- random image-->
 									<img src="images/gallery/thumbs/VFX thumb.png" class = "thumbnail_image" alt="Thumbnail could not be displayed">
 									<img src="images/gallery/fulls/VFX Preview.gif" class = "hover_image" alt="Preview could not be displayed" />
-								</a>
+								</div>
 								<div class="caption">
 									<h3>VFX</h3>
 									<p>I created Python scripts on Blender to make creating VFX easier to new beginners.</p>
 									<ul class="actions fixed">
-										<li><span class="button small">Details</span></li>
+										<li><a href="/pages/Animation:VFX/Animation:VFX.html" class="button primary">Details</a></li>
+										<!-- <li><span class="button small">Details</span></li> -->
 									</ul>
 								</div>
 							</article>
@@ -139,7 +287,7 @@
 					</section>
 
 				<!-- ML spotlight -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1">
+					<!-- <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1">
 						<div class="content" >
 							<h2 style="color: white;">Machine Learning</h2>
 							<otherp>Optical Character Recognition, Natural Language Processing, OpenCV, Scikit-learn, Pandas</otherp>
@@ -152,7 +300,7 @@
 						<div class="image">
 							<img src="images/gallery/thumbs/StudySmart thumb.png" alt="" />
 						</div>
-					</section>
+					</section> -->
 
 				<!-- 2D Animation Spotlight -->
 				<!--
@@ -162,7 +310,7 @@
 					Inspired by the entertainment of cartoons and anime, I decided to learn 2D animation. It has proven to be a pretty useful skill to have when it comes to projects, and is a lot more intuitive than other digital media.
 				-->
 				<!-- Animation Spotlight -->
-					<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="3D_Animation">
+					<!-- <section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="3D_Animation">
 						<div class="content" >
 							<h2 style="color: white;">Animation</h2>
 							<otherp>drawing, modeling, rigging, storyboarding</otherp>
@@ -178,10 +326,10 @@
 						<div class="image">
 							<img src="images/gallery/thumbs/PeppaMitai thumb.png" class="image" alt="" />
 						</div>
-					</section>
+					</section> -->
 
 				<!-- VFX spotlight -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="VFX">
+					<!-- <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="VFX">
 						<div class="content" >
 							<h2 style="color: white;">VFX</h2>
 							<otherp>scripting, rotoscoping, masking</otherp>
@@ -199,15 +347,14 @@
 						<div class="image">
 							<img src="images/gallery/thumbs/VFX thumb.png" alt="" />
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Games spotlight -->
-				<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="Games">
+				<!-- <section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="Games">
 					<div class="content" >
 						<h2 style="color: white;">Games</h2>
 						<otherp>collision detection, animation, multiplayer</otherp>
 						<br></br>
-						<!--Ever since my humble beginnings learning programming on Scratch, I liked the idea of coding something that I could use to entertain myself.-->
 						<p style="color: white;">
 							From multiplayer sidescroller games with powerups to AI connect four to bomberman, I have created a wide variety of games.
 						</p>
@@ -218,7 +365,7 @@
 					<div class="image">
 						<img src="images/gallery/thumbs/Electro Man thumb.png" class="image" alt="" />
 					</div>
-				</section>
+				</section> -->
 
 				<!-- Food spotlight -->
 				<!--section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="Games">
@@ -238,7 +385,7 @@
 
 
 				<!-- Travel spotlight -->
-				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="Games">
+				<!-- <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color1" id="Games">
 					<div class="content" >
 						<h2 style="color: white;">Travels</h2>
 						<otherp>Coming soon!</otherp>
@@ -255,11 +402,11 @@
 					<div class="image">
 						<img src="images/gallery/travels/marinabaysands.jpg" class="image" alt="Marina Bay Sands, Singapore" />
 					</div>
-				</section>
+				</section> -->
 
 
 				<!-- LeetCode -->
-				<section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="LeetCode">
+				<!-- <section class="spotlight style1 orient-right content-align-right image-position-center onscroll-image-fade-in color1" id="LeetCode">
 					<div class="content" >
 						<h2 style="color: white;">LeetCode</h2>
 						<otherp>data structures, algorithms proofs, tears</otherp>
@@ -275,11 +422,11 @@
 					<div class="image">
 						<img src="images/gallery/thumbs/leetcode_proof_thumb.png" class="image" alt="LeetCode BST proof" />
 					</div>
-				</section>
+				</section> -->
 
 
 				<!-- Seven -->
-					<section class="wrapper style1 align-center invert">
+					<!-- <section class="wrapper style1 align-center invert">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
 							<form method="POST" action="https://formsubmit.co/6aa756c23ba0c0a84533088d60c9c620">
@@ -300,12 +447,11 @@
 								<ul class="actions special">
 									<li><input type="submit" name="submit" id="submit" value="Send Message"></li>
 									<input type="hidden" name="_next" value="https://www.abhinavganesh.dev/pages/StudySmart/About.html">
-									<!--li><input type="button" name="submit" id="submit" value="Send Message" onclick="myAlert()"></li-->
 								</ul>
 							</form>
 
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Footer -->
 					<footer class="wrapper style1 align-center mainColor">
